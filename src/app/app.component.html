@@ -1,24 +1,18 @@
-<md-sidenav-container>
-  <md-sidenav #sideNav mode="side">Drawer content</md-sidenav>
-  <div class="my-content">
+<md-toolbar color="primary">
 
-    <md-toolbar color="primary">
+  <span>Travel</span>
 
-      <md-icon (click)="sideNav.toggle()" class="toolbar__menu-button">menu</md-icon>
-      <span>Travel</span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
 
-      <!-- This fills the remaining space of the current row -->
-      <span class="fill-remaining-space"></span>
+  <nav class="navigation">
+    <a class="navigation-item" md-button md-ripple routerLink="/test" routerLinkActive="navigation-item--state-active">Countries</a>
+    <a class="navigation-item" md-button md-ripple routerLink="/attractions" routerLinkActive="navigation-item--state-active">Attractions</a>
+  </nav>
 
-      <span>Countries</span>
+</md-toolbar>
 
-    </md-toolbar>
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>
 
-  </div>
-</md-sidenav-container>
-
-<!--<h1>{{title}}</h1>-->
-<!--<nav>-->
-<!--<a routerLink="/test" routerLinkActive="active">Test</a>-->
-<!--</nav>-->
-<!--<router-outlet></router-outlet>-->
