@@ -4,23 +4,30 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {MaterialModule} from '@angular/material';
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataServiceService }  from './in-memory-data-service.service';
+
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {TestComponent} from './test/test.component';
 
 import 'hammerjs';
+import { DerpComponent } from './derp/derp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    DerpComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    InMemoryWebApiModule.forRoot(InMemoryDataServiceService),
   ],
   providers: [],
   bootstrap: [AppComponent]
