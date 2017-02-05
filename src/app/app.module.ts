@@ -5,21 +5,21 @@ import {HttpModule} from '@angular/http';
 import {MaterialModule} from '@angular/material';
 
 // Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataServiceService }  from './in-memory-data-service.service';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {InMemoryDataServiceService}  from './in-memory-data-service.service';
 
 import 'hammerjs';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
-import {TestComponent} from './test/test.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {CountryListComponent} from './country-list/country-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CountryListComponent
   ],
   imports: [
     BrowserModule,
