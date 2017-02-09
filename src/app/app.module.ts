@@ -4,7 +4,10 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {MaterialModule} from '@angular/material';
 
-// Imports for loading & configuring the in-memory web api
+//Travel modules
+import {CountryModule} from './country/country.module'
+
+//Imports for loading & configuring the in-memory web api
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataServiceService}  from './in-memory-data-service.service';
 
@@ -13,15 +16,14 @@ import 'hammerjs';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import {CountryListComponent} from './country-list/country-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    CountryListComponent
+    PageNotFoundComponent
   ],
   imports: [
+    CountryModule,
     BrowserModule,
     FormsModule,
     HttpModule,
