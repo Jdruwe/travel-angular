@@ -6,9 +6,9 @@ export class InMemoryDataServiceService implements InMemoryDbService {
 
   createDb() {
     let countries = [
-      {id: '0', name: 'Belgium', continent: 'Europe'},
-      {id: '1', name: 'Netherlands', continent: 'Europe'},
-      {id: '3', name: 'Germany', continent: 'Europe'}
+      {id: '0', iso: 'be', name: 'Belgium', continent: 'Europe'},
+      {id: '1', iso: 'nl', name: 'Netherlands', continent: 'Europe'},
+      {id: '3', iso: 'de', name: 'Germany', continent: 'Europe'}
     ];
     return {countries};
   }

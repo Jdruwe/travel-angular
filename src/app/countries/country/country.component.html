@@ -1,6 +1,6 @@
 <md-card class="example-card">
   <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
+    <div md-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + getFlag() + ')'}"></div>
     <md-card-title>{{country.name}}</md-card-title>
     <md-card-subtitle>{{country.continent}}</md-card-subtitle>
   </md-card-header>

@@ -13,4 +13,9 @@ export class CountryComponent {
   constructor() {
   }
 
+  getFlag(): string {
+    //TODO: move into assets service because paths can change, I want them together in 1 place.
+    return "assets/img/flags/" + this.country.iso + ".png";
+  }
+
 }
