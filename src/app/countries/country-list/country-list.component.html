@@ -1,0 +1,9 @@
+<!--<ul>-->
+<!--<li *ngFor="let country of countries">-->
+<!--<span>{{country.id}}</span> {{country.name}}-->
+<!--</li>-->
+<!--</ul>-->
+
+<country *ngFor="let country of countries"
+         [country]="country">
+</country>

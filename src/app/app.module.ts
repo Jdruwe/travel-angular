@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 import {MaterialModule} from '@angular/material';
 
 //Travel modules
-import {CountryModule} from './country/country.module'
+import {CountriesModule} from './countries/countries.module'
 
 //Imports for loading & configuring the in-memory web api
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -23,12 +23,12 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     PageNotFoundComponent
   ],
   imports: [
-    CountryModule,
+    MaterialModule.forRoot(),
+    CountriesModule,
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule.forRoot(),
     InMemoryWebApiModule.forRoot(InMemoryDataServiceService),
   ],
   providers: [],
