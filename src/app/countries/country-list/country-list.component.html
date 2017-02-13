@@ -1,19 +1,5 @@
-<!--<ul>-->
-<!--<li *ngFor="let country of countries">-->
-<!--<span>{{country.id}}</span> {{country.name}}-->
-<!--</li>-->
-<!--</ul>-->
-<div class="flex-container"
-     fxLayout="row"
-     fxLayout.xs="column"
-     fxLayoutAlign.xs="start">
-
-  <country fxFlex *ngFor="let country of countries"
-  [country]="country">
-  </country>
-
-
+<div fxLayout.xs="column">
+  <country fxFlex *ngFor="let country of countries" [country]="country"></country>
 </div>
-
 
 

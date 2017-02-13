@@ -1,6 +1,11 @@
 .country-card {
   display: inline-block;
   margin: 10px;
+
+  &-description {
+    text-align: justify;
+  }
+
 }
 
 .flag-icon-background {

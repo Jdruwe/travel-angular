@@ -18,4 +18,8 @@ export class CountryComponent {
     return "assets/img/flags/" + this.country.iso + ".png";
   }
 
+  getShortDescription(): string {
+    return this.country.description.substring(0,200) + '...';
+  }
+
 }
