@@ -3,7 +3,17 @@
 <!--<span>{{country.id}}</span> {{country.name}}-->
 <!--</li>-->
 <!--</ul>-->
+<div class="flex-container"
+     fxLayout="row"
+     fxLayout.xs="column"
+     fxLayoutAlign.xs="start">
 
-<country *ngFor="let country of countries"
-         [country]="country">
-</country>
+  <country fxFlex *ngFor="let country of countries"
+  [country]="country">
+  </country>
+
+
+</div>
+
+
+
