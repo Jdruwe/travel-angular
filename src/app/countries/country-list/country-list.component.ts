@@ -11,6 +11,9 @@ export class CountryListComponent implements OnInit {
 
   countries: Country[];
 
+  //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
+  regularDistribution = 100 / 3;
+
   constructor(private countyService: CountryService) {
   }
 
