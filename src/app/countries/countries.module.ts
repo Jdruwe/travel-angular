@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MaterialModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -26,9 +26,14 @@ import {CountryService} from "./country.service";
     CountryListComponent,
     CountryDetailComponent,
     CountryComponent
-  ],
-  providers: [CountryService]
+  ]
 })
-export class CountriesModule {
 
+export class CountriesModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CountriesModule,
+      providers: [CountryService]
+    }
+  }
 }
