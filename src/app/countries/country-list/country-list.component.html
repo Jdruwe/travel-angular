@@ -1,5 +1,5 @@
-<div fxLayout.xs="column">
-  <country fxFlex *ngFor="let country of countries" [country]="country"></country>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap">
+  <country fxFlex.gt-xs="50%" fxFlex.gt-md="33%" *ngFor="let country of countries" [country]="country"></country>
 </div>
 
 
