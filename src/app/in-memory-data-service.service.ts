@@ -35,7 +35,28 @@ export class InMemoryDataServiceService implements InMemoryDbService {
         description: 'France, officially the French Republic, is a country in Western Europe. Its capital city is Paris. It is a member of the European Union. It is known for its culture, its many monuments and structures, and places such as the Louvre, the Eiffel Tower, the Arc de Triomphe, Giverny, Mont Saint Michel, Versailles, and Notre Dame de Paris. France is divided into 13 régions that are further subdivided départements.'
       }
     ];
-    return {countries};
-  }
 
+    let attractions = [
+      {
+        id: '0',
+        name: 'Zoo Van Antwerpen',
+        latitude: 10,
+        longitude: 20
+      },
+      {
+        id: '1',
+        name: 'Kathedraal',
+        latitude: 10,
+        longitude: 20
+      },
+      {
+        id: '2',
+        name: 'Zwembad Lier',
+        latitude: 10,
+        longitude: 20
+      }
+    ];
+
+    return {countries, attractions};
+  }
 }

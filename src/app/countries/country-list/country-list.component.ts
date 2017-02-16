@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+
 import {Country} from "../country";
 import {CountryService} from "../country.service";
 
 @Component({
-  selector: 'app-country-list',
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.scss']
 })
@@ -14,7 +15,9 @@ export class CountryListComponent implements OnInit {
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
   regularDistribution = 100 / 3;
 
-  constructor(private countyService: CountryService) {
+  constructor(
+    private router: Router,
+    private countyService: CountryService) {
   }
 
   ngOnInit() {
@@ -23,6 +26,10 @@ export class CountryListComponent implements OnInit {
 
   getCountries(): void {
     this.countyService.getCountries().then(countries => this.countries = countries);
+  }
+
+  onSelect(country: Country): void {
+    this.router.navigate(['/countries', country.id]);
   }
 
 }

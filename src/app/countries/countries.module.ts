@@ -3,6 +3,9 @@ import {CommonModule} from '@angular/common';
 import {MaterialModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
+//Modules
+import {AttractionsModule} from "../attractions/attractions.module";
+
 //Routing
 import {CountryRoutingModule} from './countries-routing.module';
 
@@ -14,13 +17,13 @@ import {CountryComponent} from './country/country.component';
 //Services
 import {CountryService} from "./country.service";
 
-
 @NgModule({
   imports: [
     CommonModule,
     CountryRoutingModule,
     MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot()
+    AttractionsModule.forRoot(),
+    FlexLayoutModule
   ],
   declarations: [
     CountryListComponent,

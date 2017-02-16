@@ -15,6 +15,9 @@ import {AttractionService} from "./attraction.service";
   declarations: [
     AttractionComponent,
     AttractionListComponent
+  ],
+  exports: [
+    AttractionListComponent
   ]
 })
 
