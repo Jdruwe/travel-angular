@@ -1,5 +1,7 @@
-<p>
-  country-detail works!
-</p>
+<button md-raised-button (click)="goToCountries()">Countries</button>
+
+<div *ngIf="country">
+  {{ country.name }}
+</div>
 
 <attraction-list></attraction-list>
