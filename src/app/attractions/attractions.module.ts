@@ -1,5 +1,8 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
+
+//Modules
 import {CommonModule} from '@angular/common';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 //Components
 import {AttractionComponent} from './attraction/attraction.component';
@@ -7,17 +10,23 @@ import {AttractionListComponent} from './attraction-list/attraction-list.compone
 
 //Services
 import {AttractionService} from "./attraction.service";
+import {AttractionMapComponent} from './attraction-map/attraction-map.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCXhLcrdXtt-OcHSorYuAYC6ZI_6lMOXpQ'
+    }),
   ],
   declarations: [
     AttractionComponent,
-    AttractionListComponent
+    AttractionListComponent,
+    AttractionMapComponent
   ],
   exports: [
-    AttractionListComponent
+    AttractionListComponent,
+    AttractionMapComponent
   ]
 })
 
