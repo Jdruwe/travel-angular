@@ -1,8 +1,8 @@
-<button md-raised-button (click)="goToCountries()">Countries</button>
+<!--<button md-raised-button (click)="goToCountries()">Countries</button>-->
 
-<!--<div *ngIf="country">-->
-  <!--{{ country.name }}-->
-<!--</div>-->
-
+<div *ngIf="country">
+  HEYOO {{country.iso}}
+  <span class="flag-icon flag-icon-{{country.iso}}">Belgium</span>
+</div>
 
 <attraction-overview *ngIf="country" [countryId]="country.id"></attraction-overview>

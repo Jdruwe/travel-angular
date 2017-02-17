@@ -20,7 +20,6 @@ export class CountryDetailComponent implements OnInit{
   }
 
   ngOnInit() {
-
     // (+) converts string 'id' to a number
     this.route.params
       .switchMap((params: Params) => this.countryService.getCountry(+params['id']))
