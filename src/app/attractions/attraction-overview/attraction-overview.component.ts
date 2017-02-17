@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 //Classes
 import {Attraction} from "../attraction";
 
 //Services
 import {AttractionService} from "../attraction.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'attraction-overview',
@@ -13,14 +14,20 @@ import {AttractionService} from "../attraction.service";
 })
 export class AttractionOverviewComponent implements OnInit {
 
-  attractions: Attraction[];
+  @Input() countryId: number;
+
+  attractions: Observable<Attraction[]>;
   lat: number = 51.678418;
   lng: number = 7.809007;
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
-  regularDistribution = (100 / 3) * 2;
+  regularMapDistribution = (100 / 3) * 2;
 
-  constructor(private attractionService: AttractionService) {
+  //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
+  regularListDistribution = 100 / 3;
+
+  constructor(
+    private attractionService: AttractionService) {
   }
 
   ngOnInit() {
@@ -28,7 +35,8 @@ export class AttractionOverviewComponent implements OnInit {
   }
 
   getAttractions(): void {
-    this.attractionService.getAttractions().then(attractions => this.attractions = attractions);
+    console.log(this.countryId);
+    this.attractions = this.attractionService.getAttractionsByCountry(this.countryId);
   }
 
 }

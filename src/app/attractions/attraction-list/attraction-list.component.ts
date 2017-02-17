@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {AttractionService} from "../attraction.service";
+import {Component, OnInit, Input} from '@angular/core';
 import {Attraction} from "../attraction";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'attraction-list',
@@ -9,17 +9,12 @@ import {Attraction} from "../attraction";
 })
 export class AttractionListComponent implements OnInit {
 
-  attractions: Attraction[];
+  @Input() attractions: Observable<Attraction[]>;
 
-  constructor(private attractionService: AttractionService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.getAttractions();
-  }
-
-  getAttractions(): void {
-    this.attractionService.getAttractions().then(attractions => this.attractions = attractions);
   }
 
 }

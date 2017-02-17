@@ -4,5 +4,5 @@
   <!--{{ country.name }}-->
 <!--</div>-->
 
-<attraction-overview></attraction-overview>
-<attraction-list></attraction-list>
+
+<attraction-overview *ngIf="country" [countryId]="country.id"></attraction-overview>

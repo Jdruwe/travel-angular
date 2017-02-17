@@ -27,7 +27,6 @@ import { AttractionOverviewComponent } from './attraction-overview/attraction-ov
     AttractionOverviewComponent
   ],
   exports: [
-    AttractionListComponent,
     AttractionOverviewComponent
   ]
 })

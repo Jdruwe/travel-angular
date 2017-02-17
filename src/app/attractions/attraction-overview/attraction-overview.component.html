@@ -1,14 +1,14 @@
-<div fxLayout="row" fxLayout.xs="column">
+<div *ngIf="attractions" fxLayout="row" fxLayout.xs="column">
 
   <sebm-google-map
     class="map"
     fxFlex.gt-xs="50%"
-    [fxFlex.gt-md]="regularDistribution"
+    [fxFlex.gt-md]="regularMapDistribution"
     [latitude]="lat"
     [longitude]="lng">
     <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
   </sebm-google-map>
 
-  <!--TODO: create attraction detail component here-->
+  <attraction-list [attractions]="attractions" fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularListDistribution"></attraction-list>
 
 </div>

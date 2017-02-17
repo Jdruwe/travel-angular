@@ -29,7 +29,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataServiceService),
+    InMemoryWebApiModule.forRoot(InMemoryDataServiceService, { delay: 0 }),
   ],
   providers: [],
   bootstrap: [AppComponent]
