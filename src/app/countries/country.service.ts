@@ -20,7 +20,7 @@ export class CountryService {
       .catch(CountryService.handleError);
   }
 
-  getCountry(id: number | string): Promise<Country> {
+  getCountry(id: number): Promise<Country> {
     return this.http.get(`${this.countriesUrl}/${id}`)
       .toPromise()
       .then(response => response.json().data as Country)

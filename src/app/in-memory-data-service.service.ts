@@ -7,28 +7,28 @@ export class InMemoryDataServiceService implements InMemoryDbService {
   createDb() {
     let countries = [
       {
-        id: 0,
+        id: 1,
         iso: 'be',
         name: 'Belgium',
         capital: 'Brussels',
         description: 'Belgium, officially the Kingdom of Belgium, is a federal state in Western Europe. It is a founding member of the European Union. It has the headquarters of the European Union, NATO and some other famous organisations. The capital city of Belgium is Brussels. Belgium has an area of 30,528 square kilometres (11,787 sq mi). Around 11 million people live in Belgium.'
       },
       {
-        id: 1,
+        id: 2,
         iso: 'nl',
         name: 'Netherlands',
         capital: 'Amsterdam',
         description: 'The Netherlands is a country that is part of (a constituent country) of the Kingdom of the Netherlands. Most of it is in Western Europe, but there are also some parts in the Caribbean. More than 17 million people live there. To the north and west of the European part of the Netherlands is the North Sea, and to the east is Germany and to the south is Belgium. The Netherlands is one of the countries that started the European Union.'
       },
       {
-        id: 2,
+        id: 3,
         iso: 'de',
         name: 'Germany',
         capital: 'Berlin',
         description: 'The Federal Republic of Germany, also called Germany, is a country in Central Europe. The country\'s full name is sometimes shortened to the FRG. To the north of Germany are the North Sea, the Baltic Sea, and the country of Denmark. To the east of Germany are the countries of Poland and the Czech Republic. To the south of Germany are the countries of Austria and Switzerland. To the west of Germany are the countries of France, Luxembourg, Belgium, and the Netherlands. The total area of Germany is 357,021 square kilometres. The large majority of Germany has warm summers and cool or cold winters.'
       },
       {
-        id: 3,
+        id: 4,
         iso: 'fr',
         name: 'France',
         capital: 'Paris',
@@ -38,22 +38,22 @@ export class InMemoryDataServiceService implements InMemoryDbService {
 
     let attractions = [
       {
-        id: 0,
-        countryId: 0,
-        name: 'Zoo Van Antwerpen',
-        latitude: 10,
-        longitude: 20
-      },
-      {
         id: 1,
-        countryId: 0,
-        name: 'Kathedraal',
+        countryId: 1,
+        name: 'Zoo Van Antwerpen',
         latitude: 10,
         longitude: 20
       },
       {
         id: 2,
         countryId: 1,
+        name: 'Kathedraal',
+        latitude: 10,
+        longitude: 20
+      },
+      {
+        id: 3,
+        countryId: 2,
         name: 'Zwembad Amsterdam',
         latitude: 10,
         longitude: 20
