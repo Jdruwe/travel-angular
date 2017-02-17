@@ -40,23 +40,23 @@ export class InMemoryDataServiceService implements InMemoryDbService {
       {
         id: 1,
         countryId: 1,
-        name: 'Zoo Van Antwerpen',
-        latitude: 10,
-        longitude: 20
+        name: 'Onze-Lieve-Vrouwekathedraal',
+        latitude: 51.220268,
+        longitude: 4.401516
       },
       {
         id: 2,
         countryId: 1,
-        name: 'Kathedraal',
-        latitude: 10,
-        longitude: 20
+        name: 'Manneken Pis',
+        latitude: 50.844993,
+        longitude: 4.349978
       },
       {
         id: 3,
-        countryId: 2,
-        name: 'Zwembad Amsterdam',
-        latitude: 10,
-        longitude: 20
+        countryId: 1,
+        name: 'Grotten van Han',
+        latitude: 50.125236,
+        longitude: 5.187286
       }
     ];
 

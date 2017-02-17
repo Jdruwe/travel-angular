@@ -16,9 +16,16 @@
   *ngIf="attractions"
   fxFlex.gt-xs="50%"
   [fxFlex.gt-md]="regularMapDistribution"
-  [latitude]="lat"
-  [longitude]="lng">
-  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+  [latitude]="latitude"
+  [longitude]="longitude"
+  [zoom]="7">
+
+  <sebm-google-map-marker
+    *ngFor="let attraction of attractions | async"
+    [latitude]="attraction.latitude"
+    [longitude]="attraction.longitude">
+  </sebm-google-map-marker>
+
 </sebm-google-map>
 
 <attraction-list *ngIf="attractions" [attractions]="attractions"></attraction-list>

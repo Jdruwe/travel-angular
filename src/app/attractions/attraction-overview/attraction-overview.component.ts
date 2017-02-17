@@ -17,8 +17,8 @@ export class AttractionOverviewComponent implements OnInit {
   @Input() countryId: number;
 
   attractions: Observable<Attraction[]>;
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  latitude: number = 51.168090;
+  longitude: number = 4.455604;
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
   regularMapDistribution = (100 / 3) * 2;
