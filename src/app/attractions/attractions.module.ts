@@ -1,4 +1,5 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
+import {MaterialModule} from "@angular/material";
 
 //Modules
 import {CommonModule} from '@angular/common';
@@ -16,6 +17,7 @@ import { AttractionOverviewComponent } from './attraction-overview/attraction-ov
 @NgModule({
   imports: [
     CommonModule,
+    MaterialModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCXhLcrdXtt-OcHSorYuAYC6ZI_6lMOXpQ'
     }),
