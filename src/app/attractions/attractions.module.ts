@@ -3,6 +3,7 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 //Modules
 import {CommonModule} from '@angular/common';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 //Components
 import {AttractionComponent} from './attraction/attraction.component';
@@ -10,7 +11,7 @@ import {AttractionListComponent} from './attraction-list/attraction-list.compone
 
 //Services
 import {AttractionService} from "./attraction.service";
-import {AttractionMapComponent} from './attraction-map/attraction-map.component';
+import { AttractionOverviewComponent } from './attraction-overview/attraction-overview.component';
 
 @NgModule({
   imports: [
@@ -18,15 +19,16 @@ import {AttractionMapComponent} from './attraction-map/attraction-map.component'
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCXhLcrdXtt-OcHSorYuAYC6ZI_6lMOXpQ'
     }),
+    FlexLayoutModule
   ],
   declarations: [
     AttractionComponent,
     AttractionListComponent,
-    AttractionMapComponent
+    AttractionOverviewComponent
   ],
   exports: [
     AttractionListComponent,
-    AttractionMapComponent
+    AttractionOverviewComponent
   ]
 })
 

@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AttractionMapComponent } from './attraction-map.component';
+import { AttractionOverviewComponent } from './attraction-overview.component';
 
-describe('AttractionMapComponent', () => {
-  let component: AttractionMapComponent;
-  let fixture: ComponentFixture<AttractionMapComponent>;
+describe('AttractionOverviewComponent', () => {
+  let component: AttractionOverviewComponent;
+  let fixture: ComponentFixture<AttractionOverviewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AttractionMapComponent ]
+      declarations: [ AttractionOverviewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AttractionMapComponent);
+    fixture = TestBed.createComponent(AttractionOverviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

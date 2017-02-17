@@ -1,10 +1,10 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MaterialModule} from '@angular/material';
-import {FlexLayoutModule} from '@angular/flex-layout';
 
 //Modules
 import {AttractionsModule} from "../attractions/attractions.module";
+import {MaterialModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 //Routing
 import {CountryRoutingModule} from './countries-routing.module';
