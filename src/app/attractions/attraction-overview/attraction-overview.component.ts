@@ -19,6 +19,7 @@ export class AttractionOverviewComponent implements OnInit {
   attractions: Observable<Attraction[]>;
   latitude: number = 51.168090;
   longitude: number = 4.455604;
+  selectedAttraction: Attraction;
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
   regularMapDistribution = (100 / 3) * 2;
@@ -40,7 +41,7 @@ export class AttractionOverviewComponent implements OnInit {
   }
 
   markerClicked(attraction): void {
-    console.log(attraction)
+    this.selectedAttraction = attraction;
   }
 
 }

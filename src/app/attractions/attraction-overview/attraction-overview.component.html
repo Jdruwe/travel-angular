@@ -29,6 +29,9 @@
 
 </sebm-google-map>
 
+<!--TODO: click on attraction -> show closer on map-->
 <attraction-list *ngIf="attractions" [attractions]="attractions"></attraction-list>
 
+<!--TODO: attraction detail here-->
+<span *ngIf="selectedAttraction">{{selectedAttraction.name}}</span>
 
