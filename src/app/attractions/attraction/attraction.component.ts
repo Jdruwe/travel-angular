@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import {Attraction} from "../attraction";
 
 @Component({
@@ -6,7 +6,7 @@ import {Attraction} from "../attraction";
   templateUrl: './attraction.component.html',
   styleUrls: ['./attraction.component.scss']
 })
-export class AttractionComponent implements OnInit {
+export class AttractionComponent implements OnInit, OnDestroy {
 
   @Input() attraction: Attraction;
 
@@ -14,6 +14,11 @@ export class AttractionComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('component created', this.attraction)
+  }
+
+  ngOnDestroy() {
+    console.log('destroying component', this.attraction)
   }
 
 }

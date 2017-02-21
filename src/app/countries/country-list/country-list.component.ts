@@ -32,4 +32,8 @@ export class CountryListComponent implements OnInit {
     this.router.navigate(['/countries', country.id]);
   }
 
+  trackById(index: number, attraction: any): number {
+    return attraction.id;
+  }
+
 }

@@ -1,5 +1,9 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap">
-  <country fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularDistribution" *ngFor="let country of countries" [country]="country" (click)="onSelect(country)"></country>
+  <country *ngFor="let country of countries; trackBy: trackById"
+           fxFlex.gt-xs="50%"
+           [fxFlex.gt-md]="regularDistribution"
+           [country]="country"
+           (click)="onSelect(country)"></country>
 </div>
 
 

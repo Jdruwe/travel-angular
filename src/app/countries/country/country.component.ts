@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import {Country} from "../country";
 
 @Component({
@@ -6,7 +6,7 @@ import {Country} from "../country";
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss']
 })
-export class CountryComponent {
+export class CountryComponent implements OnInit, OnDestroy{
 
   @Input() country: Country;
 
@@ -20,6 +20,14 @@ export class CountryComponent {
 
   getShortDescription(): string {
     return this.country.description.substring(0,200) + '...';
+  }
+
+  ngOnInit() {
+    console.log('component created', this.country)
+  }
+
+  ngOnDestroy() {
+    console.log('destroying component', this.country)
   }
 
 }
