@@ -17,4 +17,8 @@ export class AttractionListComponent implements OnInit {
   ngOnInit() {
   }
 
+  trackById(index: number, attraction: any): number {
+    return attraction.id;
+  }
+
 }
