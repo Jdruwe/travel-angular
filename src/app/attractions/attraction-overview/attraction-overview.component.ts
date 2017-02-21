@@ -39,4 +39,8 @@ export class AttractionOverviewComponent implements OnInit {
     this.attractions = this.attractionService.getAttractionsByCountry(this.countryId);
   }
 
+  markerClicked(attraction): void {
+    console.log(attraction)
+  }
+
 }
