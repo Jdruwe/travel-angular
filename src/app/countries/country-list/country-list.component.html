@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap">
-  <country *ngFor="let country of countries; trackBy: trackById"
+  <country *ngFor="let country of countries | async; trackBy: trackById"
            fxFlex.gt-xs="50%"
            [fxFlex.gt-md]="regularDistribution"
            [country]="country"

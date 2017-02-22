@@ -15,13 +15,6 @@ export class AttractionService {
   constructor(private http: Http) {
   }
 
-  getAttractions(): Promise<Attraction[]> {
-    return this.http.get(this.attractionsUrl)
-      .toPromise()
-      .then(response => response.json().data as Attraction[])
-      .catch(AttractionService.handleError);
-  }
-
   getAttractionsByCountry(countryId: number): Observable<Attraction[]> {
     return this.http.get(`${this.attractionsUrl}?countryId=${countryId}`)
       .map((r: Response) => r.json().data as Attraction[])

@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 
+import {Observable} from "rxjs";
 import 'rxjs/add/operator/toPromise';
 
 import {Country} from "./country";
@@ -12,18 +13,15 @@ export class CountryService {
 
   constructor(private http: Http) {
   }
-
-  getCountries(): Promise<Country[]> {
+  getCountries(): Observable<Country[]> {
     return this.http.get(this.countriesUrl)
-      .toPromise()
-      .then(response => response.json().data as Country[])
+      .map(response => response.json().data as Country[])
       .catch(CountryService.handleError);
   }
 
-  getCountry(id: number): Promise<Country> {
+  getCountry(id: number): Observable<Country> {
     return this.http.get(`${this.countriesUrl}/${id}`)
-      .toPromise()
-      .then(response => response.json().data as Country)
+      .map(response => response.json().data as Country)
       .catch(CountryService.handleError);
   }
 
