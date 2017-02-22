@@ -18,12 +18,7 @@ export class AttractionService {
   getAttractionsByCountry(countryId: number): Observable<Attraction[]> {
     return this.http.get(`${this.attractionsUrl}?countryId=${countryId}`)
       .map((r: Response) => r.json().data as Attraction[])
-      .catch(AttractionService.handleError);
-  }
-
-  private static handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
 }

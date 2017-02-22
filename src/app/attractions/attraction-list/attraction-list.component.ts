@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class AttractionListComponent implements OnInit {
 
-  @Input() attractions: Observable<Attraction[]>;
+  @Input() attractions: Attraction[];
 
   constructor() {
   }

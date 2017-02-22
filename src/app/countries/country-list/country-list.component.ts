@@ -11,7 +11,7 @@ import {Observable} from "rxjs";
 })
 export class CountryListComponent implements OnInit {
 
-  countries: Observable<Country[]>;
+  countries: Country[];
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
   regularDistribution = 100 / 3;
@@ -25,7 +25,11 @@ export class CountryListComponent implements OnInit {
   }
 
   getCountries(): void {
-    this.countries = this.countyService.getCountries();
+    this.countyService.getCountries().subscribe(
+      countries => this.countries = countries,
+      err => {
+        console.log(err);
+      });
   }
 
   onSelect(country: Country): void {

@@ -16,7 +16,7 @@ export class AttractionOverviewComponent implements OnInit {
 
   @Input() countryId: number;
 
-  attractions: Observable<Attraction[]>;
+  attractions: Attraction[];
   latitude: number = 51.168090;
   longitude: number = 4.455604;
   selectedAttraction: Attraction;
@@ -27,8 +27,7 @@ export class AttractionOverviewComponent implements OnInit {
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
   regularListDistribution = 100 / 3;
 
-  constructor(
-    private attractionService: AttractionService) {
+  constructor(private attractionService: AttractionService) {
   }
 
   ngOnInit() {
@@ -37,7 +36,11 @@ export class AttractionOverviewComponent implements OnInit {
 
   getAttractions(): void {
     console.log(this.countryId);
-    this.attractions = this.attractionService.getAttractionsByCountry(this.countryId);
+    this.attractionService.getAttractionsByCountry(this.countryId).subscribe(
+      attractions => this.attractions = attractions,
+      err => {
+        console.log(err);
+      });
   }
 
   markerClicked(attraction): void {
