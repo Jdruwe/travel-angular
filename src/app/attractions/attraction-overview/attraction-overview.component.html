@@ -12,7 +12,7 @@
       *ngFor="let attraction of attractions"
       [latitude]="attraction.latitude"
       [longitude]="attraction.longitude"
-      (markerClick)="markerClicked(attraction)">
+      (markerClick)="attractionClicked(attraction)">
     </sebm-google-map-marker>
 
   </sebm-google-map>
@@ -27,7 +27,11 @@
 </div>
 
 <!--TODO: click on attraction -> show closer on map-->
-<attraction-list *ngIf="attractions" [attractions]="attractions"></attraction-list>
+<div class="attraction-list" *ngIf="attractions">
+  <md-chip-list class="attraction-list" *ngIf="attractions">
+    <md-chip (click)="attractionClicked(attraction)" *ngFor="let attraction of attractions; trackBy: trackById">{{attraction.name}}</md-chip>
+  </md-chip-list>
+</div>
 
 <!--TODO: attraction detail here-->
 

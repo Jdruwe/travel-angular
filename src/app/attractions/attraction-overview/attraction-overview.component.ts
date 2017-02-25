@@ -43,7 +43,7 @@ export class AttractionOverviewComponent implements OnInit {
       });
   }
 
-  markerClicked(attraction): void {
+  attractionClicked(attraction): void {
     this.selectedAttraction = attraction;
   }
 
