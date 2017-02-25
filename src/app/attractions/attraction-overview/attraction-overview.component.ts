@@ -25,7 +25,7 @@ export class AttractionOverviewComponent implements OnInit {
   regularMapDistribution = (100 / 3) * 2;
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
-  regularListDistribution = 100 / 3;
+  regularDetailDistribution = 100 / 3;
 
   constructor(private attractionService: AttractionService) {
   }

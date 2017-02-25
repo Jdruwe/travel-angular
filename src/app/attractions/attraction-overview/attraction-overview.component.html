@@ -1,37 +1,33 @@
-<!--<div *ngIf="attractions" fxLayout="row" fxLayout.xs="column">-->
+<div *ngIf="attractions" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
 
-<!--<sebm-google-map-->
-<!--class="map"-->
-<!--fxFlex.gt-xs="50%"-->
-<!--[fxFlex.gt-md]="regularMapDistribution"-->
-<!--[latitude]="lat"-->
-<!--[longitude]="lng">-->
-<!--<sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>-->
-<!--</sebm-google-map>-->
+  <sebm-google-map
+    *ngIf="attractions"
+    fxFlex.gt-xs="50%"
+    [fxFlex.gt-md]="regularMapDistribution"
+    [latitude]="latitude"
+    [longitude]="longitude"
+    [zoom]="7">
 
+    <sebm-google-map-marker
+      *ngFor="let attraction of attractions"
+      [latitude]="attraction.latitude"
+      [longitude]="attraction.longitude"
+      (markerClick)="markerClicked(attraction)">
+    </sebm-google-map-marker>
 
-<!--</div>-->
+  </sebm-google-map>
 
-<sebm-google-map
-  *ngIf="attractions"
-  fxFlex.gt-xs="50%"
-  [fxFlex.gt-md]="regularMapDistribution"
-  [latitude]="latitude"
-  [longitude]="longitude"
-  [zoom]="7">
+  <md-card
+    class="attraction-detail"
+    fxFlex.gt-xs="50%"
+    [fxFlex.gt-md]="regularDetailDistribution">
+    <span *ngIf="selectedAttraction">{{selectedAttraction.name}}</span>
+  </md-card>
 
-  <sebm-google-map-marker
-    *ngFor="let attraction of attractions"
-    [latitude]="attraction.latitude"
-    [longitude]="attraction.longitude"
-    (markerClick)="markerClicked(attraction)">
-  </sebm-google-map-marker>
-
-</sebm-google-map>
+</div>
 
 <!--TODO: click on attraction -> show closer on map-->
 <attraction-list *ngIf="attractions" [attractions]="attractions"></attraction-list>
 
 <!--TODO: attraction detail here-->
-<span *ngIf="selectedAttraction">{{selectedAttraction.name}}</span>
 

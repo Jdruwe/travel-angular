@@ -1,8 +1,9 @@
 <!--<button md-raised-button (click)="goToCountries()">Countries</button>-->
 
-<div *ngIf="country" class="header">
+<md-card class="header" *ngIf="country">
   <span class="flag-icon flag-icon-{{country.iso}}"></span>
   <span>{{country.name}}</span>
-</div>
+  <p class="header-description">{{country.description}}</p>
+</md-card>
 
 <attraction-overview *ngIf="country" [countryId]="country.id"></attraction-overview>
