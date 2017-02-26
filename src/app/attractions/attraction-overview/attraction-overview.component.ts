@@ -88,4 +88,5 @@ export class AttractionOverviewComponent implements OnInit {
     this.selectedAttraction = null;
     this.resetZoom();
   }
+
 }

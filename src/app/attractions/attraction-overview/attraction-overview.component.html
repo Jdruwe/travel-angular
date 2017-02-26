@@ -27,9 +27,11 @@
 </div>
 
 <div class="attraction-list" *ngIf="attractions">
-  <md-chip-list class="attraction-list" *ngIf="attractions" selectable="true">
-    <md-chip *ngIf="hasAttractionSelected()" color="accent" selected="true" (click)="showAllAttractions()">Back</md-chip>
-    <md-chip [selected]="isSelectedAttraction(attraction)" (click)="attractionClicked(attraction)" *ngFor="let attraction of attractions; trackBy: trackById">
+  <md-chip-list selectable="true">
+    <md-chip *ngIf="hasAttractionSelected()" color="accent" selected="true" (click)="showAllAttractions()">Back
+    </md-chip>
+    <md-chip class="attraction-list-item" [selected]="isSelectedAttraction(attraction)"
+             (click)="attractionClicked(attraction)" *ngFor="let attraction of attractions; trackBy: trackById">
       {{attraction.name}}
     </md-chip>
   </md-chip-list>
