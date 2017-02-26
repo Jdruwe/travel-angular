@@ -1,7 +1,9 @@
 <md-card class="country-card">
   <md-card-header>
-    <div md-card-avatar class="flag-icon-background flag-icon-{{country.iso}}"></div>
-    <md-card-title>{{country.name}}</md-card-title>
+    <md-card-title>
+      <span class="flag-icon flag-icon-{{country.iso}}"></span>
+      {{country.name}}
+    </md-card-title>
     <md-card-subtitle>{{country.capital}}</md-card-subtitle>
   </md-card-header>
   <img md-card-image src="assets/img/capitals/{{country.capital}}.jpg">

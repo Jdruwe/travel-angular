@@ -5,7 +5,6 @@ import {Attraction} from "../attraction";
 
 //Services
 import {AttractionService} from "../attraction.service";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'attraction-overview',
@@ -15,11 +14,14 @@ import {Observable} from "rxjs";
 export class AttractionOverviewComponent implements OnInit {
 
   @Input() countryId: number;
+  @Input() latitude: number;
+  @Input() longitude: number;
 
   attractions: Attraction[];
-  latitude: number = 51.168090;
-  longitude: number = 4.455604;
   selectedAttraction: Attraction;
+
+  //Map properties
+  zoom: number = 7;
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
   regularMapDistribution = (100 / 3) * 2;
@@ -45,6 +47,45 @@ export class AttractionOverviewComponent implements OnInit {
 
   attractionClicked(attraction): void {
     this.selectedAttraction = attraction;
+    this.latitude = attraction.latitude;
+    this.longitude = attraction.longitude;
+    this.zoom = 12;
   }
 
+  resetZoom(): void {
+    this.zoom = 7;
+  }
+
+  getLatitude(): number {
+    if (this.selectedAttraction) {
+      return this.selectedAttraction.latitude;
+    } else {
+      return this.latitude;
+    }
+  }
+
+  getLongitude(): number {
+    if (this.selectedAttraction) {
+      return this.selectedAttraction.longitude;
+    } else {
+      return this.longitude;
+    }
+  }
+
+  isSelectedAttraction(attraction: Attraction): boolean {
+    if (this.selectedAttraction) {
+      return attraction.id == this.selectedAttraction.id;
+    } else {
+      return false;
+    }
+  }
+
+  hasAttractionSelected(): boolean {
+    return !!this.selectedAttraction;
+  }
+
+  showAllAttractions(): void {
+    this.selectedAttraction = null;
+    this.resetZoom();
+  }
 }

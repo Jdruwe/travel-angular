@@ -4,9 +4,9 @@
     *ngIf="attractions"
     fxFlex.gt-xs="50%"
     [fxFlex.gt-md]="regularMapDistribution"
-    [latitude]="latitude"
-    [longitude]="longitude"
-    [zoom]="7">
+    [latitude]="getLatitude()"
+    [longitude]="getLongitude()"
+    [zoom]="zoom">
 
     <sebm-google-map-marker
       *ngFor="let attraction of attractions"
@@ -26,10 +26,12 @@
 
 </div>
 
-<!--TODO: click on attraction -> show closer on map-->
 <div class="attraction-list" *ngIf="attractions">
-  <md-chip-list class="attraction-list" *ngIf="attractions">
-    <md-chip (click)="attractionClicked(attraction)" *ngFor="let attraction of attractions; trackBy: trackById">{{attraction.name}}</md-chip>
+  <md-chip-list class="attraction-list" *ngIf="attractions" selectable="true">
+    <md-chip *ngIf="hasAttractionSelected()" color="accent" selected="true" (click)="showAllAttractions()">Back</md-chip>
+    <md-chip [selected]="isSelectedAttraction(attraction)" (click)="attractionClicked(attraction)" *ngFor="let attraction of attractions; trackBy: trackById">
+      {{attraction.name}}
+    </md-chip>
   </md-chip-list>
 </div>
 
