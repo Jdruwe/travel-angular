@@ -6,7 +6,7 @@ import {Country} from "../country";
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.scss']
 })
-export class CountryComponent implements OnInit, OnDestroy{
+export class CountryComponent implements OnInit, OnDestroy {
 
   @Input() country: Country;
 
@@ -19,7 +19,7 @@ export class CountryComponent implements OnInit, OnDestroy{
   }
 
   getShortDescription(): string {
-    return this.country.description.substring(0,200) + '...';
+    return this.country.description.substring(0, 150) + '...';
   }
 
   ngOnInit() {

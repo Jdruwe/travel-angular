@@ -1,41 +1,43 @@
-<div *ngIf="attractions" fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+<!--<sebm-google-map-->
+  <!--*ngIf="attractions"-->
+  <!--fxFlex.gt-md="70%"-->
+  <!--fxFlex.gt-xs="50%"-->
+  <!--[latitude]="getLatitude()"-->
+  <!--[longitude]="getLongitude()"-->
+  <!--[zoom]="zoom"-->
+  <!--[mapDraggable]="false">-->
 
-  <sebm-google-map
-    *ngIf="attractions"
-    fxFlex.gt-xs="50%"
-    [fxFlex.gt-md]="regularMapDistribution"
-    [latitude]="getLatitude()"
-    [longitude]="getLongitude()"
-    [zoom]="zoom">
+  <!--<sebm-google-map-marker-->
+    <!--*ngFor="let attraction of attractions"-->
+    <!--[latitude]="attraction.latitude"-->
+    <!--[longitude]="attraction.longitude"-->
+    <!--(markerClick)="attractionClicked(attraction)">-->
 
-    <sebm-google-map-marker
-      *ngFor="let attraction of attractions"
-      [latitude]="attraction.latitude"
-      [longitude]="attraction.longitude"
-      (markerClick)="attractionClicked(attraction)">
-    </sebm-google-map-marker>
+    <!--<sebm-google-map-info-window-->
+      <!--[disableAutoPan]="true"-->
+      <!--[isOpen]="isSelectedAttraction(attraction)">-->
+      <!--<strong>{{attraction.name}}</strong>-->
+    <!--</sebm-google-map-info-window>-->
 
-  </sebm-google-map>
+  <!--</sebm-google-map-marker>-->
 
-  <md-card
-    class="attraction-detail"
-    fxFlex.gt-xs="50%"
-    [fxFlex.gt-md]="regularDetailDistribution">
-    <span *ngIf="selectedAttraction">{{selectedAttraction.name}}</span>
-  </md-card>
+<!--</sebm-google-map>-->
 
-</div>
+<!--TODO: make this work in a separate component-->
+<!--<attraction-list [attractions]="attractions"></attraction-list>-->
 
-<div class="attraction-list" *ngIf="attractions">
-  <md-chip-list selectable="true">
-    <md-chip *ngIf="hasAttractionSelected()" color="accent" selected="true" (click)="showAllAttractions()">Back
-    </md-chip>
-    <md-chip class="attraction-list-item" [selected]="isSelectedAttraction(attraction)"
-             (click)="attractionClicked(attraction)" *ngFor="let attraction of attractions; trackBy: trackById">
-      {{attraction.name}}
-    </md-chip>
-  </md-chip-list>
-</div>
+<!--<div class="attraction-list" *ngIf="attractions">-->
+  <!--<md-chip-list selectable="true">-->
+    <!--<md-chip *ngIf="hasAttractionSelected()"-->
+             <!--color="accent" selected="true"-->
+             <!--(click)="showAllAttractions()">Back-->
+    <!--</md-chip>-->
+    <!--<md-chip class="attraction-list-item"-->
+             <!--[selected]="isSelectedAttraction(attraction)"-->
+             <!--(click)="attractionClicked(attraction)"-->
+             <!--*ngFor="let attraction of attractions; trackBy: trackById">{{attraction.name}}-->
+    <!--</md-chip>-->
+  <!--</md-chip-list>-->
+<!--</div>-->
 
-<!--TODO: attraction detail here-->
 

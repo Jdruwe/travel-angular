@@ -13,6 +13,10 @@ export class AttractionComponent implements OnInit, OnDestroy {
   constructor() {
   }
 
+  getAttractionImageName(){
+    return this.attraction.name.replace(/\s+/g, '-').toLowerCase();
+  }
+
   ngOnInit() {
     console.log('component created', this.attraction)
   }

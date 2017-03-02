@@ -6,9 +6,7 @@
   <p class="header-description">{{country.description}}</p>
 </md-card>
 
-<attraction-overview
-  *ngIf="country"
-  [countryId]="country.id"
-  [latitude]="country.latitude"
-  [longitude]="country.longitude">
-</attraction-overview>
+<attraction-list *ngIf="country" [countryId]="country.id"></attraction-list>
+
+
+

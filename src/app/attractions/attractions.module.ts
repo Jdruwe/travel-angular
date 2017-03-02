@@ -17,7 +17,7 @@ import { AttractionOverviewComponent } from './attraction-overview/attraction-ov
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCXhLcrdXtt-OcHSorYuAYC6ZI_6lMOXpQ'
     }),
@@ -29,7 +29,7 @@ import { AttractionOverviewComponent } from './attraction-overview/attraction-ov
     AttractionOverviewComponent
   ],
   exports: [
-    AttractionOverviewComponent
+    AttractionListComponent
   ]
 })
 

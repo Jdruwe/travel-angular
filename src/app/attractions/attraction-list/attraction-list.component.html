@@ -1,0 +1,22 @@
+<!--<div class="attraction-list" *ngIf="attractions">-->
+<!--<md-chip-list selectable="true">-->
+<!--<md-chip *ngIf="hasAttractionSelected()"-->
+<!--color="accent" selected="true"-->
+<!--(click)="showAllAttractions()">Back-->
+<!--</md-chip>-->
+<!--<md-chip class="attraction-list-item"-->
+<!--[selected]="isSelectedAttraction(attraction)"-->
+<!--(click)="attractionClicked(attraction)"-->
+<!--*ngFor="let attraction of attractions; trackBy: trackById">{{attraction.name}}-->
+<!--</md-chip>-->
+<!--</md-chip-list>-->
+<!--</div>-->
+
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap>
+  <attraction *ngFor="let attraction of attractions; trackBy: trackById"
+           fxFlex.gt-xs="50%"
+           [fxFlex.gt-md]="regularDistribution"
+           [attraction]="attraction"
+           (click)="onSelect(country)"></attraction>
+</div>

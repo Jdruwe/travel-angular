@@ -14,8 +14,6 @@ import {AttractionService} from "../attraction.service";
 export class AttractionOverviewComponent implements OnInit {
 
   @Input() countryId: number;
-  @Input() latitude: number;
-  @Input() longitude: number;
 
   attractions: Attraction[];
   selectedAttraction: Attraction;
@@ -24,7 +22,7 @@ export class AttractionOverviewComponent implements OnInit {
   zoom: number = 7;
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
-  regularMapDistribution = (100 / 3) * 2;
+  regularMapDistribution = (100 / 3) * 3;
 
   //I use this to show of expression bindings in flex-layout and because I don't want the calculated value in the HTML.
   regularDetailDistribution = 100 / 3;
@@ -47,8 +45,6 @@ export class AttractionOverviewComponent implements OnInit {
 
   attractionClicked(attraction): void {
     this.selectedAttraction = attraction;
-    this.latitude = attraction.latitude;
-    this.longitude = attraction.longitude;
     this.zoom = 12;
   }
 
@@ -56,21 +52,21 @@ export class AttractionOverviewComponent implements OnInit {
     this.zoom = 7;
   }
 
-  getLatitude(): number {
-    if (this.selectedAttraction) {
-      return this.selectedAttraction.latitude;
-    } else {
-      return this.latitude;
-    }
-  }
-
-  getLongitude(): number {
-    if (this.selectedAttraction) {
-      return this.selectedAttraction.longitude;
-    } else {
-      return this.longitude;
-    }
-  }
+  // getLatitude(): number {
+  //   if (this.selectedAttraction) {
+  //     return this.selectedAttraction.latitude;
+  //   } else {
+  //     return this.latitude;
+  //   }
+  // }
+  //
+  // getLongitude(): number {
+  //   if (this.selectedAttraction) {
+  //     return this.selectedAttraction.longitude;
+  //   } else {
+  //     return this.longitude;
+  //   }
+  // }
 
   isSelectedAttraction(attraction: Attraction): boolean {
     if (this.selectedAttraction) {
