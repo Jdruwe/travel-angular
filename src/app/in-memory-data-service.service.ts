@@ -49,6 +49,7 @@ export class InMemoryDataServiceService implements InMemoryDbService {
         id: 1,
         countryId: 1,
         name: 'Onze-Lieve-Vrouwekathedraal',
+        location: 'Antwerp',
         latitude: 51.220268,
         longitude: 4.401516
       },
@@ -56,6 +57,7 @@ export class InMemoryDataServiceService implements InMemoryDbService {
         id: 2,
         countryId: 1,
         name: 'Manneken Pis',
+        location: 'Brussels',
         latitude: 50.844993,
         longitude: 4.349978
       },
@@ -63,6 +65,7 @@ export class InMemoryDataServiceService implements InMemoryDbService {
         id: 3,
         countryId: 1,
         name: 'Grotten van Han',
+        location: 'Rochefort',
         latitude: 50.125236,
         longitude: 5.187286
       }

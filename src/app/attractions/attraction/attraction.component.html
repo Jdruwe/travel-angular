@@ -2,7 +2,7 @@
   <md-card-header>
     <div md-card-avatar class="example-header-image"></div>
     <md-card-title>{{attraction.name}}</md-card-title>
-    <md-card-subtitle>Dog Breed</md-card-subtitle>
+    <md-card-subtitle>{{attraction.location}}</md-card-subtitle>
   </md-card-header>
   <img md-card-image src="assets/img/attractions/{{getAttractionImageName()}}.jpg">
   <md-card-content>
@@ -13,8 +13,10 @@
     </p>
   </md-card-content>
   <md-card-actions>
-    <button md-button>LIKE</button>
-    <button md-button>SHARE</button>
+    <!--<button md-raised-button	><md-icon>favorite</md-icon></button>-->
+    <!--<button md-raised-button	><md-icon>place</md-icon></button>-->
+    <button md-button class="attraction-card__action attraction-card__action--red"><md-icon>favorite</md-icon></button>
+    <button md-button class="attraction-card__action attraction-card__action--green"><md-icon>place</md-icon></button>
   </md-card-actions>
 </md-card>
 

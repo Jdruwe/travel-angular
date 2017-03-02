@@ -1,3 +1,16 @@
 .attraction-card {
   margin: 10px;
+
+  &__action {
+    min-width: initial;
+
+    &--red {
+      color: red;
+    }
+
+    &--green {
+      color: limegreen;
+    }
+
+  }
 }
